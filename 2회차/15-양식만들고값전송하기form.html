@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kor">
+    <head>
+        <meta charset="utf-8">
+        <title>양식 만들고 입력 정보 보내기</title>
+    </head>
+    <body>
+        <!--form; 입력요소들을 모아주는 것
+            서버가 있다고 하면 데이터를 모아서 서버에 보내주는 역할
+            블록 레벨 요소임
+            form안에 label=>블록레벨 안에 인라인 요소 채워넣은 꼴
+        -->
+        <!--
+            action 옵션; 서버 주소(정보를 보낼)
+            method 옵션;
+            get(요청)/
+            post(보낸 정보를 어떻게 처리했으면 좋겠다고 요구)
+        -->
+        <form action="none.com" method="post">
+
+            <label for="name">이름</label>
+            <input id="name" type="text" name="name">
+            <br>
+            <label for="age">나이</label>
+            <input id="age" type="number" name="age">
+            <br>
+            <label for="character">성격</label>
+            <textarea id="character" name="character"></textarea>
+            <br>
+            <!-- 
+                submit; 제출; 
+                form에 있는 입력 값들을 서버로 보내는 버튼이 만들어짐
+            -->
+            <input type="submit">
+        
+        </form>
+    </body>
+</html>
