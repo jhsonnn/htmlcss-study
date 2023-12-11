@@ -11,20 +11,19 @@
         <h1>오즈코딩스쿨 회원가입</h1>
     </header>
     <main>
-        <form>
-            <input type="email" id="email" placeholder="이메일을 입력해주세요." name="oz_Signup">
+        <form action="none.com" method="post">
+            <input type="email" id="email" placeholder="이메일을 입력해주세요." name="email">
             <br>
-            <input type="text" id="name" placeholder="이름을 입력해주세요." name="oz_Signup">
+            <input type="text" id="name" placeholder="이름을 입력해주세요." name="name">
             <br>
-            <input type="password" id="pw" placeholder="비밀번호를 입력해주세요." name="oz_Signup">
+            <input type="password" id="pw" placeholder="비밀번호를 입력해주세요." name="pw">
             <br>
-            <input type="password" id="check_pw" placeholder="비밀번호를 다시 입력해주세요." name="oz_Signup">
+            <input type="password" id="check_pw" placeholder="비밀번호를 다시 입력해주세요." name="check_pw">
             <br>
-            <input type="tel" id="tel01" name="oz_Signup"/>-
-            <input type="tel" id="tel02" name="oz_Signup"/>-
-            <input type="tel" id="tel03" name="oz_Signup"/>
+            <input type="tel" id="tel01" name="tel01"/>-
+            <input type="tel" id="tel02" name="tel02"/>-
+            <input type="tel" id="tel03" name="tel03"/>
             <br>
-        </form>
             000000
             <br>
             <input type="button" value="인증번호 전송" id="certification_Number" disabled>
@@ -32,9 +31,9 @@
             3:00
             <br>
             <input type="button" value="인증확인" id="certification_Confirm" disabled>
-        <form>
+            <br>
             <select name="region">
-                <option value="selection">지역을 선택해주세요</option> 
+                <option value="selection" selected disabled>지역을 선택해주세요</option> 
                 <option value="seoul">서울</option>
                 <option value="kyeonggi">경기</option>
                 <option value="incheon">인천</option>
@@ -47,17 +46,14 @@
                 <option value="seoul">전남</option>
                 <option value="seoul">제주</option>
             </select>
-        </form>
-        <form>
+            <br>
             <input type="radio" id="female" name="sex">
             <label for="female">여성</label>
             <input type="radio" id="male" name="sex">
             <label for="male">남성</label>
+            <br>
+            <input type="submit" value="가입하기">
         </form>
-    </main>
-    <footer>
-        <input type="submit" value="가입하기">
-    </footer>
-    
+    </main>    
 </body>
 </html>
