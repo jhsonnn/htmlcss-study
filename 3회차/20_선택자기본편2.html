@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>선택자 기본편</title>
+    <style>
+        /*
+        기본적으로는 스타일 속성이 겹치면 나중에 쓴 태그 선택자가 지정됨
+        그러나 선택자 우선순위에 따름
+        선택자 우선순위: 쓰여진 순서와 관계없이 적용되는 순위
+        1. 아이디 선택자
+        2. 클래스 선택자
+        3. 태그 선택자
+        */
+        h2, p, li{
+            color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>춤의 장르</h2>
+    <p>무척 다양한 장르가 존재합니다.</p>
+    <ul>
+        <li class="hiphop">비보빙</li>
+        <li class="hiphop" id="poppin">팝핀</li>
+        <li class="hiphop">락킹</li>
+        <li id="belly">벨리</li>
+        <li id="jazz">재즈</li>
+    </ul>
+</body>
+</html>

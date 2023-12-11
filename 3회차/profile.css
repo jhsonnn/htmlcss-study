@@ -1,0 +1,28 @@
+*{
+    text-align: center;
+}
+
+html{
+    background-color: #b3a194;
+    font-size: 16px;
+}
+
+body{
+    /*블록 형성 width크기 640px로 제한*/
+    width: 640px;
+    margin: auto; /*너비에서 남는 여백을 동일하게 분배(가운데 정렬 효과)*/
+}
+
+h1{
+    font-size: 48px;
+}
+
+img{
+    width:200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+p{
+    font-size: 1.5rem;
+}

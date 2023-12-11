@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>배경을 깔아보자</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border: 20px double green;
+            /*
+            배경 ; 박스 바깥 영역을 제외한 요소 내 세가지 영역
+            */
+            background-color: yellowgreen;
+
+            /*background-clip: ; 배경의 적용 범위*/
+            /*기본값, 경계선까지*/
+            background-clip:border-box;
+            /*가장 안쪽 영역부터 패딩까지*/
+            /* background-clip:padding-box;*/
+            /*콘텐츠 영역에서만*/
+            /*background-clip:content-box;*/
+            
+            background-image: url(images/jebbi.jpg);
+            /*background-size: ; 너비와 높이를 같이 지정해줘야함*/
+            background-size: 200px 200px;
+            /*
+            background-repeat: ;
+            배경에 여백이 남더라도 바둑판 배열을 하지 않고 싶을 때
+            repeat;은 기본값, no-repeat은 반복x 
+            ** 한 방향 repeat **
+            repeat-x ; 가로 / repeat-y ; 세로
+            */
+            background-repeat: no-repeat;
+
+            /*background-origin: ; 이미지의 시작 위치 지정*/
+            /*border box 부터 이미지 시작*/
+            /*background-origin: border-box;*/
+            /*padding box 부터 이미지 시작(기본 값)*/
+            /*background-origin: padding-box;*/
+            /*content box 안에서 부터 시작*/
+            background-origin: content-box;
+            /*
+            background-position: ; 이미지 위치 이동
+            left, right, top, bottom, center
+            =>해당 키워드들 조합 가능
+            */
+            background-position: left top;
+            /*세부적 포지션 이동 가능*/
+            background-position: 100px 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

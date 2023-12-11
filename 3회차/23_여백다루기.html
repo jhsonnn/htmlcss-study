@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>여백다루기</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            /*
+            상하 좌우
+            margin: 10px 20px;
+            */
+            /*
+            상 좌우 하
+            margin: 10px 20px 30px;
+            */
+            /*시계방향 상 우 하 좌*/
+            margin: 10px 20px 30px 40px;
+
+            /*
+            padding의 여백도 margin처럼 상 우 하 좌로 시계방향임
+            padding: 10px 20px 30px 40px;
+            */
+            /* 
+            padding의 접미사 ; 
+            padding을 지정할 때 개별 여백지정 가능
+            top bottom left right
+            */
+            padding-top: 20px;
+            padding-right: 50px;
+
+            /*
+            박스 사이징 제어
+            width & height를 각각 200px로 잡아두었지만
+            margin과 padding에 따라 사이즈가 늘어남
+            따라서 이를 제어하기 위해 박스 사이징 사용
+            기본 값: 
+            box-sizing: content-box;
+            */
+            /*
+            box-sizing: content-box; 
+            width & height가 border까지의 크기를 포함함
+            */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
