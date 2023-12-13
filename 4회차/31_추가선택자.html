@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>선택자 더 알아보기</title>
+    <style>
+        /*속성 선택자; []사용
+        특정 속성이 있는 이미지를 선택가능
+        img 없이 [alt]만으로도 사용 가능
+        */
+        /*
+        img[alt]{
+            border: 5px dashed red;
+        }
+        */
+        /*
+        img[width]{
+            border: 5px dashed red;
+        }
+        */
+        /*
+        기호와 함께 사용하는 속성 선택자
+        * : 값의 포함 여부
+        ^ : 값의 시작 여부
+        $ : 값의 끝 여부
+        */
+        /* * */
+        /*
+        [width *= "2"]{
+            border: 5px dashed red;
+        }*/
+        /* ^ */
+        /*
+        [width ^= "1"]{
+            border: 5px dashed red;
+        }*/
+        /* $ */
+        [width $= "0"]{
+            border: 5px dashed red;
+        }
+
+        /* 태그 중첩 */
+        /*body에 들어있는 p*/
+        /*하위 요소 중첩*/
+        /*
+        body em{
+            color: blue;
+        }*/
+        /* 자식요소 선택하기 
+            반드시 한 단계만 중첩되어 있어야 함
+            따라서
+            body > em{
+                color: blue;
+            }
+            는 적용되지 x
+            => p 태그의 한 단계 밑 자식인 em 태그는 적용 o
+        */
+        p > em{
+            color: blue;
+        }
+        /* 형제 요소 : 같은 레벨에 이어진 요소 */
+        /* 특정 형제 요소 선택
+        third라는 아이디의 요소의 형제 요소 중
+        바로 뒤의 p 형제 요소를 선택*/
+        /*
+        #third + p{
+            color: orange;
+        }
+        */
+        /* 전체 형제 요소 */
+        /* ~ ; third라는 아이디의 전체 형제 요소인 p*/
+        #third ~ p{
+            color: green;
+        }
+        /* 형제 요소 선택 시 주의 사항 */
+        /* 아래 코드를 사용하면 img가 안 보여야하는데 보임
+            그 이유는 형제 선택자는 뒤이어 있는 형제들에만 적용됨
+            앞의 형제들은 적용 안됨
+        */
+        #third ~ img{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/jebbi.jpg" width="120" alt="제삐">
+    <img src="images/jebbi.jpg" width="120">
+    <img src="images/jebbi.jpg" width="120" id="third">
+    <p>제리 삐삐는 망원동에 삽니다.</p>
+    <p>제리 삐삐는 둘 다 코숏 치즈입니다.</p>
+    <p>제리 삐삐는 <em>몸무게가 거의 2배</em> 차이가 납니다.</p>
+    <p>제리 삐삐는 따뜻한 곳을 좋아합니다.</p>
+</body>
+</html>

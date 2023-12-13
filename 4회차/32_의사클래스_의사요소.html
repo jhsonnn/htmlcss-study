@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>의사클래스 & 의사요소</title>
+    <style>
+        .menu{
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+        /*menu의 자식 li*/
+        .menu > li{
+            /* 옆으로 나란히 이어짐 & 기호도 사라짐*/
+            display: inline-block;
+            text-align: center;
+        }
+        li > a{
+            /* a 태그는 인라인이라 width가 안 먹힘.inline-block 처리*/
+            display: inline-block;
+            width: 80px;
+            padding: 10px;
+            /* 밑줄 사라짐 */
+            text-decoration: none;
+        }
+        /** 의사 클래스 **/
+        /* 상태 기반의 선택; a 태그에 마우스 올리면 이벤트 발생 */
+        a:hover{
+            color: white;
+            background-color: gray;
+        }
+        /* 상태 기반의 선택; 마우스를 누르면 */
+        a:active{
+            color: white;
+            background-color: black;
+        }
+        /* 위치 기반의 선택*/
+        /* nth-child(); 몇 번째 */
+        /* li:(형제중에서의) 선택 
+            괄호 안 
+                3; 세번째(증권)
+                n; 모든 n에 대해 적용
+                2n; 짝수 번째에 대해 적용
+                2n-1; 홀수 번째에 대해 적용
+        */
+        li:nth-child(n){
+            font-size: 20px;
+        }
+        /** 의사 요소 **/
+        /*의사클래스는 특정 상태만 선택, 의사 요소는 일부분만 선택한다. 요소 선택 & 컨텐츠 추가도 가능 */
+        /* a태그 중에서 일부분만 선택 */
+        a::first-letter{
+            color: white;
+        }
+        /* 콘텐츠 뒤에~ */
+
+        /* a::after{
+            보기라는 내용 추가
+            content: "보기";
+            color: yellow;
+        } 
+        */
+        a::before{
+            content: "보기";
+            color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">사전</a></li>
+        <li><a href="#">뉴스</a></li>
+        <li><a href="#">증권</a></li>
+        <li><a href="#">지도</a></li>
+    </ul>
+</body>
+</html>

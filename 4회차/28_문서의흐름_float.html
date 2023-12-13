@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>문서의 흐름</title>
+    <style>
+        .container{
+            height: 400px;
+            border: 1px solid black;
+        }
+        /*float ; 요소의 기본적인 흐름에서 제외하고
+         상위 요소의 왼쪽이나 오른쪽 면에 배치한다
+         그러나 float을 이용함으로써
+         다른 요소들의 배치에 문제가 생길 수 있음
+         따라서 역효과를 보는 요소에 clear요소를 추가하여 해결
+         left right both
+         */
+        #first{
+            float: right;
+        }
+        #second{
+            float: left;
+        }
+        p{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="first"
+        src="images/jebbi.jpg" width="160">
+        <img id="second"
+        src="images/jebbi.jpg" width="160">
+        <p>
+            제리삐삐입니다. 둘 다 코숏이고 스트릿 출신입니다.
+            제리는 톰과제리의 제리를 닮아서 제리이고요
+            삐삐는 삐삐 울어서 삐삐입니다.
+        </p>
+    </div>
+</body>
+</html>
