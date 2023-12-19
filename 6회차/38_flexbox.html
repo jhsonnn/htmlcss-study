@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>플렉스박스 레이아웃</title>
+    
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+    }
+    ul{
+        padding: 0;
+        list-style-type: none;
+        height: 200px;
+
+        display: flex;
+        /* 1. flex-direction */
+        /* 가로축 */
+        /* flex-direction: row; */
+        /* 오른쪽->왼쪽 진행 가로축 */
+        /* flex-direction: row-reverse; */
+        /* 세로축 */
+        /* flex-direction: column; */
+        /* 교차축; 현재 주축은 사용하는 것, 그것에 교차하는 축이 교차축 */
+        /* flex-container는 일차원적으로 요소를 배치한다
+            화면이 작아지면 보통의 요소들은 자식을 아래로 떨어뜨리는데
+            flex 요소는 자식을 찌그러뜨림
+            => 이러한 일차원적인 특징을 수정할 수 있는 속성*/
+        
+
+        /* 2. flex-wrap  */
+        /* 자식을 찌그러뜨리는 게 아니라 한칸 아래로 떨어뜨림 */
+        /* flex-wrap: wrap; */
+        /* flex-wrap: nowrap; */
+        /* flex-direction 과 flex-wrap을 한꺼번에 지정할 수 있는 단축 속성 */
+        
+
+        /* 3. flex-flow */
+        /* flex-flow: row wrap; */
+        
+
+        /* 4. justify-content */
+        /*  flex-container라는 가정 하에 사용
+            flex item 들이 주축에서 어떤 식으로 배치될 것인가 라는 것을 결정하는 것
+        */
+        /* 기본 */
+        /* justify-content: flex-start; */
+        /* 끝에 배치 */
+        /* justify-content: flex-end; */
+        /* 가운데 배치 */
+        /* justify-content: center; */
+        /* 양 끝 정렬 & 사이사이 여백 배치 */
+        /* justify-content: space-between; */
+        /* 개별 flex 아이템이 가지고 있는 양 옆의 여백을 똑같이 맞춤 */
+        /* justify-content: space-around; */
+        /* 모든 여백을 똑같이 맞춤 */
+        /* justify-content: space-evenly; */
+
+
+        /* 5. align-items */
+        /* 교차축의 모습 변경 */
+        /* 기본 값 : flex의 높이에 맞춰 flex 아이템들 높이도 기본적으로 정의되어있음*/
+        /* align-items: stretch; */
+        /* 아이템이 위에 붙어있음 */
+        /* align-items: flex-start; */
+        /* 아이템이 아래에 붙어있음 */
+        /* align-items: flex-end; */
+        /* 가운데 있음 */
+        align-items: center;
+
+
+        /* 6. align-self */
+        /* flex 아이템에 값을 줌 */
+        /* li:nth-child(3){
+            align-self: flex-start;
+        } */
+        li{
+            
+            background-color: tomato;
+        }
+        li:nth-child(2n){
+            background-color: teal;
+        }
+
+
+        /* 7. flex 아이템이 다른 아이템들에 비해 여백을 차지해서 커질 수 있다는 것을 의미 */
+        /* li:nth-child(2){ */
+            /* 기본 값 */
+            /* flex-grow: 0; */
+            /* 값이 클수록 상대적으로 더 많은 여백을 가져감 */
+            /* flex-grow: 1; */
+        /* }
+        li:nth-child(4){
+            flex-grow: 2;
+        } */
+
+
+        /* 8. flex-shrink */
+        li:nth-child(2){
+            flex-shrink: 1;
+        }
+        li:nth-child(4){
+            /* 기본 값보다 값이 크면 더 찌그러짐 */
+            flex-shrink: 2;
+        }
+
+
+        /* 9. flex-basis */
+        /* flex 아이템의 기본 크기를 설정한다.
+        크기 지정이 안되어 있으면 콘텐츠의 크기에 해당하는 만큼 크기가 지정됨
+        => flex-basis ; flex 아이템이 초기 값을 가지고 배치를 진행할 수 있게 됨
+        */
+        /* li:nth-child(2n-1){
+            flex-basis: 100px;
+        } */
+
+
+        /* 10. flex-basis가 설정된 상태에서 설정되지 않은 아이템에 flex-grow 값 주기 */
+        /* li:nth-child(2n-1){
+            flex-basis: 100px;
+            flex-grow: 1;
+        }
+        li:nth-child(2)
+        {
+            flex-grow: 1;
+        }
+        li:nth-child(4)
+        {
+            flex-grow: 1;
+        } */
+
+
+        /* 11. flex */
+        li:nth-child(2n-1){
+            /* flex-grow flex-shrink flex-basis */
+            /* 여백 이용    기본  값      너비 120px부터 */
+            flex: 1 1 120px;
+        }
+
+    }
+    </style>
+<body>
+    <h2>유노코딩이 집 앞 강가에서 목격한 동물들</h2>
+    <ul>
+        <!-- flex 아이템은 flex 컨테이너로서의 역할은 하지 않는다. -->
+        <!-- flex 아이템 안에서도 flex 레이아웃을 사용하고 싶다면
+        flex 아이템에도 별도록 flex 요소 지정해야함  -->
+        <li>물오리</li>
+        <li>물까치</li>
+        <li>고라니</li>
+        <li>누룩뱀</li>
+        <li>너구리</li>
+    </ul>
+</body>
+</html>
