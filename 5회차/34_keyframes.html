@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>애니메이션 효과 눈알 굴리기</title>
+    <style>
+        .eyes{
+            width: 480px;
+            /* 가운데 정렬 */
+            margin: auto;
+        }
+        .eye{
+            width: 200px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 100px;
+            /* ball 때문에 지정 */
+            position: relative;
+        }
+        /* 수직정렬된 눈 가로로 붙이기 */
+        .eye:nth-child(1){
+            float: left;
+        }
+        .eye:nth-child(2){
+            float: right;
+        }
+        .ball{
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border-radius: 50%;
+            /* 절대 위치 지정 
+            상위 요소 중 position 요소를 기준으로 한다.
+            */
+            position: absolute;
+            top: 80px;
+            left: 30px;
+
+
+            /* 애니메이션 적용 */
+            animation-name: moving;
+            /* 2초간 눈 이동 */
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-timing-function: linear;
+            /* 애니메이션 반복 횟수 */
+            animation-iteration-count: 3;
+            /* 무한하게 애니메이션 반복 */
+            /* animation-iteration-count: infinite; */
+            /* 애니메이션의 방향 지정 */
+            /* 정방향(기본 값)) */
+            /* animation-direction: normal; */
+            /* 역방향 */
+            /* animation-direction: reverse; */
+            /* 정방향 갔다가 역방향 번갈아가면서 */
+            animation-direction: alternate;
+
+            /* 애니메이션 진행 상태 */
+            /* running: 기본 값 */
+            /* animation-play-state: running;*/
+            /* paused : 멈춤 */
+            /* animation-play-state: paused; */
+
+        }
+        /* ball에 마우스 가져다대면 paused */
+        .ball:hover{
+                animation-play-state: paused;
+        }
+
+        /* 프레임 만들기 */
+        @keyframes moving{
+            /* left 30px인 곳 부터 */
+            from{ left: 30px; }
+            /* left 120px인 곳으로 이동*/
+            to{ left: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="eyes">
+        <div class="eye">
+            <div class="ball">
+            </div>
+        </div>
+        <div class="eye">
+            <div class="ball">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
